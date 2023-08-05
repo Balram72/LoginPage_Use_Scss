@@ -1,0 +1,21 @@
+/* Side Login Form */
+*{ margin: 0; padding: 0;  font-family: "Jost", sans-serif; }
+@import '_variable';
+@import 'mixins';
+body{   display: flex;  justify-content:  $center;  align-items:  $center;min-height: 100vh; background: $bodybgcolor;
+    .main{ @include loginmain(350px,500px,$bgimage);   border-radius:10px;   overflow: hidden; box-shadow: 5px 20px 50px #000;}
+}
+#chk{  display:  $none;  }
+.signup { position: relative;@include loginmain(100%,100%,$none); }
+label{ @include labelcode($btcolor); }  
+input{ @include inputButton(20px,#e0dede,flex,20px auto,2px);padding: 10px;color:#377675;}
+button{ @include inputButton(40px,$bcolor,block,10px auto,5px); font-size: 1em; margin-top: 20px; color: $btcolor; transition: 0.2s ease-in; cursor: pointer; font-weight: bold;
+ &:hover { background: $bgdcolor ; }  
+}
+.login{ @include loginmain($none, 460px,#eee);   border-radius: 60%/10%; @include transformvalu(translateY(-180px)); @include transformvalu(0.8s ease-in-out);
+   label{ @include labelcode($bcolor);transform: scale(0.6); }
+}
+#chk:checked ~ .login {  @include transformvalu(translateY(-500px))};
+#chk:checked ~ .login label{ @include transformvalu(scale(1))};
+#chk:checked ~ .signup label{@include transformvalu(scale(0.6));}
+
