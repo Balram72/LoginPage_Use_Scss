@@ -1,0 +1,30 @@
+@mixin labelcode ($bcolor){
+    color: $bcolor;
+    font-size: 2.3em;
+    justify-content:  $center;
+    display: flex;
+    margin: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    @include transformvalu(0.5s ease-in-out);
+    
+}   
+@mixin inputButton($hvalue,$bcolor,$dvalue,$mvalue,$brvalue){
+    width: 60%;
+    height:$hvalue ; 
+    background:$bcolor;
+    justify-content:$center;
+    margin:$mvalue;
+    display: $dvalue;
+    border:$none;
+    outline:$none;
+    border-radius:$brvalue;
+}
+@mixin transformvalu($tvalue){
+    transform:$tvalue
+}
+@mixin loginmain($wvalue,$hvalue,$bgimage){
+    width:$wvalue;
+    height:$hvalue;
+    background:$bgimage;
+}
